@@ -1,79 +1,29 @@
 package br.senai.sp.jandira;
 
-//import java.util.Scanner;
+import java.time.LocalDate;
 
-import br.senai.sp.jandira.model.Conta;
+import br.senai.sp.jandira.model.Cliente;
 
 public class App {
-
 	public static void main(String[] args) {
+	
+		Cliente ana = new Cliente();
+		Cliente pedro = new Cliente();
 		
-//		Scanner leitor = new Scanner(System.in);
+		System.out.println(ana);
+		System.out.println(pedro);
 		
-		
-		
-		Conta contaDaLayla = new Conta();
-		Conta contaDoJoao = new Conta();
-		Conta contaDoCelso = new Conta();
-		
-		//dados das contas
-		contaDaLayla.numero = "001-8";
-		contaDaLayla.cliente = "Layla Giovanna";
-		contaDaLayla.tipoConta = "Corrente";
-		contaDaLayla.saldo = 2000;
-		
-		contaDoJoao.numero = "002-4";
-		contaDoJoao.cliente = "João Sousa";
-		contaDoJoao.tipoConta = "Poupança";
-		contaDoJoao.saldo = 90;
+		ana.nome = "Ana Maria Braga";
+		ana.dataDeNascimento = LocalDate.of(2005,10,27);
+		ana.peso = 60;
+		ana.altura = 1.80;
 		
 		
-		//mensagem para o cliente
-//		System.out.print("Qual o nome do cliente?:");
-//		contaDoCelso.cliente = leitor.next();
-//		
-//		System.out.print("Qual o número da conta?:");
-//		contaDoCelso.numero = leitor.next();
-//		
-//		System.out.print("Qual o tipo da conta?:");
-//		contaDoCelso.tipoConta = leitor.next();
-//		
-//		System.out.print("Qual o saldo da conta?: \n");
-//		contaDoCelso.saldo = leitor.nextDouble();
+		pedro.nome = "Pedro Dias";
+		pedro.dataDeNascimento = LocalDate.of(2000, 5, 24 );
+		pedro.peso = 80;
+		pedro.altura = 1.94;
 		
 		
-		//exibindo os dados das contas
-		contaDaLayla.exibirDadosDaConta();
-		contaDoJoao.exibirDadosDaConta();
-		contaDoCelso.exibirDadosDaConta();
-		
-		//depositando na conta
-		contaDaLayla.depositar(500);
-		contaDaLayla.exibirDadosDaConta();
-		
-		contaDaLayla.depositar(25);
-		contaDaLayla.exibirDadosDaConta();
-		
-		contaDaLayla.depositar(500);
-		contaDaLayla.exibirDadosDaConta();
-		
-		//sacando na conta
-		contaDaLayla.sacar(100);
-		contaDaLayla.exibirDadosDaConta();
-		
-		contaDaLayla.sacar(2930);
-		contaDaLayla.exibirDadosDaConta();
-		
-		//transferencia da conta
-		contaDaLayla.transferir(50, contaDoJoao);
-		contaDaLayla.exibirDadosDaConta();
-		contaDoJoao.exibirDadosDaConta();
-		
-		contaDaLayla.transferir(2900, contaDoJoao);
-		contaDaLayla.exibirDadosDaConta();
-		contaDoJoao.exibirDadosDaConta();
-		
-
 	}
-
 }
