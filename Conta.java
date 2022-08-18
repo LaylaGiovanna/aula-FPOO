@@ -7,21 +7,32 @@ public class Conta {
 	public String cliente;
 	public double saldo;
 	
-	public void transferir() {
+	public void transferir(double valorTransferir, Conta contaDestino ) {
+		System.out.printf("...Transferindo %s na conta da(o) %s \n \n" , valorTransferir , cliente);
 		
+		boolean ocorreuSaque = sacar(valorTransferir);
+		
+		if (ocorreuSaque) {
+			contaDestino.depositar(valorTransferir);
+		} else { System.out.printf("Infelizmente não foi possível realizar a transferênia \n \n ");
+		
+		}
 	}
+		
 	
 	public void depositar(double valorDoDeposito) {
-		
 		System.out.printf("...Depositando %s na conta da(o) %s \n \n" , valorDoDeposito , cliente);
 		saldo = saldo + valorDoDeposito;
 	}
 	
-	public void sacar(double valorDoSaque) {
+	public boolean sacar(double valorDoSaque) {
+	
 		if (saldo >= valorDoSaque) {
 		saldo = saldo - valorDoSaque;
+			return true;
 		} else {
-			System.out.println("Infelizmente não há saldo suficiente");
+			System.out.printf("Infelizmente não há saldo suficiente \n \n");
+				return false;
 		}
 		
 	}

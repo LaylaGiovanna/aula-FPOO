@@ -1,6 +1,6 @@
 package br.senai.sp.jandira;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 import br.senai.sp.jandira.model.Conta;
 
@@ -8,7 +8,7 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		Scanner leitor = new Scanner(System.in);
+//		Scanner leitor = new Scanner(System.in);
 		
 		
 		
@@ -57,11 +57,22 @@ public class App {
 		contaDaLayla.depositar(500);
 		contaDaLayla.exibirDadosDaConta();
 		
+		//sacando na conta
 		contaDaLayla.sacar(100);
 		contaDaLayla.exibirDadosDaConta();
 		
 		contaDaLayla.sacar(2930);
 		contaDaLayla.exibirDadosDaConta();
+		
+		//transferencia da conta
+		contaDaLayla.transferir(50, contaDoJoao);
+		contaDaLayla.exibirDadosDaConta();
+		contaDoJoao.exibirDadosDaConta();
+		
+		contaDaLayla.transferir(2900, contaDoJoao);
+		contaDaLayla.exibirDadosDaConta();
+		contaDoJoao.exibirDadosDaConta();
+		
 
 	}
 
